@@ -7,7 +7,7 @@ using System.Net.Http.Headers;
 using Discord;
 using Discord.Net;
 
-namespace aegyoBot
+namespace HGLBot
 {
     public class HttpService : IService
     {

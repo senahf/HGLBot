@@ -9,7 +9,7 @@ using Discord.Modules;
 using CloudFlareUtilities;
 using System.Net.Http;
 
-namespace aegyoBot.Modules.Public
+namespace HGLBot.Modules.Public
 {
     internal class PublicModule : IModule
     {

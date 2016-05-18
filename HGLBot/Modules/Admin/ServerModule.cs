@@ -10,7 +10,7 @@ using System.Net;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace aegyoBot.Modules.Admin
+namespace HGLBot.Modules.Admin
 {
 
     internal class ServerModule : IModule

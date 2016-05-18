@@ -1,4 +1,4 @@
-﻿namespace aegyoBot
+﻿namespace HGLBot
 {
     public enum PermissionLevel : byte
     {

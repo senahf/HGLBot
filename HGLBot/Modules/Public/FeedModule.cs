@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System;
 
-namespace aegyoBot.Modules.Drama
+namespace HGLBot.Modules.Drama
 {
     internal class FeedModule : IModule
     {

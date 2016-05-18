@@ -7,7 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace aegyoBot.Services
+namespace HGLBot.Services
 {
     public class SettingsManager<GlobalSettingsT, SettingsT> : SettingsManager<SettingsT>
         where GlobalSettingsT : class, new()

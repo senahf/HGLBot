@@ -6,7 +6,7 @@ using Discord.Commands;
 using Discord.Commands.Permissions.Levels;
 using Discord.Modules;
 
-namespace aegyoBot.Modules.Admin
+namespace HGLBot.Modules.Admin
 {
 
     internal class ColorModule : IModule

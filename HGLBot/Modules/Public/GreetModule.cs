@@ -10,7 +10,7 @@ using System.Net;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace aegyoBot.Modules.Public
+namespace HGLBot.Modules.Public
 {
 
     internal class GreetModule : IModule
