@@ -1,0 +1,2 @@
+# HGLBot
+Bot for HearthGamingLeague
