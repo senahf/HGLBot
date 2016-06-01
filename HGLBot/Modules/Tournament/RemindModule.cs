@@ -62,7 +62,7 @@ namespace HGLBot.Modules.Tournament
             {
                 try
                 {
-                    HGL = _client.GetServer(151183130286489610).GetChannel(187382307202531328);
+                    HGL = _client.GetServer(121658903728488448).GetChannel(174365963091705857);
 
                     if (HGL == null) // If HGL doesn't exist...
                         return;
@@ -75,8 +75,22 @@ namespace HGLBot.Modules.Tournament
                     { }
                     else
                     {
-                        if (DateTime.Now.TimeOfDay.Hours == 19)
+                        if (DateTime.Now.TimeOfDay.Hours == 20)
                         {
+                            await Task.Run(async () =>
+                            {
+                                var msgs = (await HGL.DownloadMessages(100).ConfigureAwait(false)).Where(m => m.User.Id == _client.CurrentUser.Id);
+                                foreach (var m in msgs)
+                                {
+                                    try
+                                    {
+                                        await m.Delete().ConfigureAwait(false);
+                                    }
+                                    catch { }
+                                    await Task.Delay(100).ConfigureAwait(false);
+                                }
+                                }).ConfigureAwait(false);
+
                             await HGL.SendMessage($"@everyone{Environment.NewLine}Tonight's HGL Daily Tournament starts in an hour! Sign up and check-in here{Environment.NewLine + link}");
                             File.WriteAllText("tournie.txt", "1");
 
