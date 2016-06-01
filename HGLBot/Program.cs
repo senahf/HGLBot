@@ -8,6 +8,7 @@ using HGLBot.Services;
 using HGLBot.Modules.Public;
 using HGLBot.Modules.Drama;
 using HGLBot.Modules.Admin;
+using HGLBot.Modules.Tournament;
 using Discord.Commands.Permissions.Levels;
 using System.Threading;
 using System.IO;
@@ -40,7 +41,7 @@ namespace HGLBot
             .UsingCommands(x =>
              {
                  x.AllowMentionPrefix = false;
-                 x.PrefixChar = Convert.ToChar("!");
+                 x.PrefixChar = Convert.ToChar(">");
                  x.HelpMode = HelpMode.Public;
                  // x.ExecuteHandler
                  // x.ErrorHandler [ChatterBotAPI? (aka CleverBot for Invalid commands)]
@@ -56,8 +57,10 @@ namespace HGLBot
                 x.BufferLength = 10000;
             });
             _client.AddModule<ServerModule>("Server", ModuleFilter.None);
+            _client.AddModule<RemindModule>("Remind", ModuleFilter.None);
             _client.AddModule<PublicModule>("Public", ModuleFilter.None);
             _client.AddModule<GreetModule>("Greet", ModuleFilter.None);
+            _client.AddModule<ColorModule>("Color", ModuleFilter.None);
 
             _client.ExecuteAndWait(async () =>
              {

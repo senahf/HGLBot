@@ -3,7 +3,7 @@
   "frameworks": {
     "dnx451": {
       "bin": {
-        "assembly": "../../aegyoBot/libs/CloudFlareUtilities.dll"
+        "assembly": "../../HGLBot/libs/CloudFlareUtilities.dll"
       }
     }
   }

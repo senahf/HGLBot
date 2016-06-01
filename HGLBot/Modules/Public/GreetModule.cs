@@ -32,10 +32,6 @@ namespace HGLBot.Modules.Public
         }
         private async void UserJoined(object sender, UserEventArgs e)
         {
-            if (e.Server.Id == 170293626927185921)
-            {
-                await _client.GetServer(170293626927185921).GetChannel(170293626927185921).SendMessage($"Welcome to #KShows, {e.User.Mention}!");
-            }
         }
     }
 }

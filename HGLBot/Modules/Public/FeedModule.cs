@@ -32,16 +32,7 @@ namespace HGLBot.Modules.Drama
                         var handler = new ClearanceHandler();
                         var client = new HttpClient(handler);
                         client.Timeout = TimeSpan.FromSeconds(8);
-                        File.AppendAllText("kissasian.html", await client.GetStringAsync("http://kissasian.com/"));
-                        /*HtmlDocument doc = new HtmlDocument();
-                        doc.Load("kissasian.html");
-                        var root = doc.DocumentNode;
-                        var a = root.Descendants()
-                            .Where(n => n.GetAttributeValue("class", "").Equals("barContent"))
-                            .Single()
-                            .Descendants("a")
-                            .Single();
-                        var content = a.InnerText;*/
+                        File.AppendAllText("HGL.html", await client.GetStringAsync("http://kissasian.com/"));
                         HtmlDocument doc = new HtmlDocument();
                         doc.Load("kissasian.html");
                         var root = doc.DocumentNode;

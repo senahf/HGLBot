@@ -3,7 +3,7 @@
   "frameworks": {
     "dnx451": {
       "bin": {
-        "assembly": "../../aegyoBot/libs/HtmlAgilityPack.dll"
+        "assembly": "../../HGLBot/libs/HtmlAgilityPack.dll"
       }
     }
   }
