@@ -75,7 +75,7 @@ namespace HGLBot.Modules.Tournament
                     { }
                     else
                     {
-                        if (DateTime.Now.TimeOfDay.Hours == 20)
+                        if (DateTime.Now.TimeOfDay.Hours == 15)
                         {
                             await Task.Run(async () =>
                             {
