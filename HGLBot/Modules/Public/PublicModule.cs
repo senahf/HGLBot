@@ -119,10 +119,11 @@ namespace HGLBot.Modules.Public
                 {
                     try
                     {
+                        String name = e.GetArg(0).ToLower();
                         if (!e.Message.ToString().Contains("#"))
                         { await e.Channel.SendMessage("Remember that you must include your Battletag #!"); return; }
                         String rawr = file_get_contents("http://aegyo.pro/HGL/api.php?verify=y&cmd=rank");
-                        string output = GetStringInBetween($"[{e.GetArg(0)}]", $"[/{e.GetArg(0)}]", rawr, false, false);
+                        string output = GetStringInBetween($"[{name}]", $"[/{name}]", rawr, false, false);
                         String output2 = file_get_contents("http://aegyo.pro/HGL/api.php?verify=y&cmd=points&name="+HttpUtility.UrlEncode(e.GetArg(0)));
 
                         await e.Channel.SendMessage($"{e.GetArg(0)} is currently in {output} place with {output2} points!");
