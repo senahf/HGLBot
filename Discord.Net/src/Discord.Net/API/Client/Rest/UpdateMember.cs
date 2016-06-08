@@ -1,5 +1,6 @@
 ﻿using Discord.API.Converters;
 using Newtonsoft.Json;
+using System.ComponentModel;
 
 namespace Discord.API.Client.Rest
 {
@@ -21,6 +22,8 @@ namespace Discord.API.Client.Rest
         public ulong? VoiceChannelId { get; set; }
         [JsonProperty("roles"), JsonConverter(typeof(LongStringArrayConverter))]
         public ulong[] RoleIds { get; set; }
+        [JsonProperty("nick", DefaultValueHandling = DefaultValueHandling.Ignore), DefaultValue("")]
+        public string Nickname { get; set; }
 
         public UpdateMemberRequest(ulong guildId, ulong userId)
         {

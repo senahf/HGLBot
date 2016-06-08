@@ -7,8 +7,6 @@ using Discord.Commands.Permissions.Levels;
 using Discord.Modules;
 using System.IO;
 using System.Net;
-using System.Drawing;
-using System.Drawing.Imaging;
 
 namespace HGLBot.Modules.Admin
 {

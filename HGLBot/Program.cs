@@ -6,7 +6,7 @@ using Discord.Audio;
 using Discord;
 using HGLBot.Services;
 using HGLBot.Modules.Public;
-using HGLBot.Modules.Drama;
+//using HGLBot.Modules.Drama;
 using HGLBot.Modules.Admin;
 using HGLBot.Modules.Tournament;
 using Discord.Commands.Permissions.Levels;
@@ -51,7 +51,6 @@ namespace HGLBot
             .UsingAudio(x =>
             {
                 x.Mode = AudioMode.Outgoing;
-                x.EnableMultiserver = true;
                 x.EnableEncryption = true;
                 x.Bitrate = AudioServiceConfig.MaxBitrate;
                 x.BufferLength = 10000;

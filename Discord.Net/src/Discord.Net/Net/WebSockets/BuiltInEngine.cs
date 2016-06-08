@@ -1,4 +1,4 @@
-﻿#if DOTNET5_4
+﻿#if NETSTANDARD1_3
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -51,8 +51,7 @@ namespace Discord.Net.WebSockets
         {
             string ignored;
             while (_sendQueue.TryDequeue(out ignored)) { }
-
-            var socket = _webSocket;
+            
             _webSocket = null;
 
             return TaskHelper.CompletedTask;
@@ -89,7 +88,7 @@ namespace Discord.Net.WebSockets
                             if (result.MessageType == WebSocketMessageType.Close)
                                 throw new WebSocketException((int)result.CloseStatus.Value, result.CloseStatusDescription);
                             else
-                                stream.Write(buffer.Array, buffer.Offset, buffer.Count);
+                                stream.Write(buffer.Array, 0, result.Count);
 
                         }
                         while (result == null || !result.EndOfMessage);

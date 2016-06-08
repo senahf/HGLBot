@@ -38,7 +38,7 @@ namespace Discord.ETF
                 return _stream;
             }
         }
-        
+
         public ETFWriter(Stream stream, bool leaveOpen = false)
         {
             if (stream == null) throw new ArgumentNullException(nameof(stream));
@@ -48,7 +48,7 @@ namespace Discord.ETF
             _buffer = new byte[11];
             _encoding = Encoding.UTF8;
         }
-        
+
         public void Write(bool value)
         {
             if (value)
@@ -272,10 +272,10 @@ namespace Discord.ETF
         #region Emit
         private static Action<ETFWriter, T> CreateSerializer<T>(Type type, TypeInfo typeInfo, bool isDirect)
         {
-            var method = new DynamicMethod(isDirect ? "SerializeETF" : "SerializeIndirectETF", 
+            var method = new DynamicMethod(isDirect ? "SerializeETF" : "SerializeIndirectETF",
                 null, new[] { typeof(ETFWriter), isDirect ? type : typeof(object) }, true);
             var generator = method.GetILGenerator();
-            
+
             generator.Emit(OpCodes.Ldarg_0); //ETFWriter(this)
             generator.Emit(OpCodes.Ldarg_1); //ETFWriter(this), value
             if (!isDirect)
@@ -293,14 +293,14 @@ namespace Discord.ETF
             return method.CreateDelegate(typeof(Action<ETFWriter, T>)) as Action<ETFWriter, T>;
         }
         private static void EmitWriteValue(ILGenerator generator, Type type, TypeInfo typeInfo, bool isTop)
-        {            
+        {
             //Convert enum types to their base type
             if (typeInfo.IsEnum)
             {
                 type = Enum.GetUnderlyingType(type);
                 typeInfo = type.GetTypeInfo();
             }
-            
+
             //Primitives/Enums
             Type targetType = null;
             if (!typeInfo.IsEnum && IsType(type, typeof(long), typeof(ulong), typeof(double), typeof(bool), typeof(string),
@@ -475,7 +475,7 @@ namespace Discord.ETF
                 _isDisposed = true;
             }
         }
-        
+
         public void Dispose() => Dispose(true);
         #endregion
     }

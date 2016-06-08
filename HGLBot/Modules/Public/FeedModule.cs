@@ -1,4 +1,4 @@
-﻿using Discord;
+﻿/*using Discord;
 using Discord.Commands.Permissions.Levels;
 using Discord.Modules;
 using CloudFlareUtilities;
@@ -52,3 +52,4 @@ namespace HGLBot.Modules.Drama
         }
     }
 }
+*/
